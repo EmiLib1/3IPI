@@ -14,6 +14,10 @@
         <div>
          <label> nome: </label>
          <input type="text" name="nome" id="nome">
+         <?php  if( isset($_REQUEST["erro"])){
+
+               echo "*";
+         } ?>
         </div> 
         <div>
         <div>
@@ -34,5 +38,11 @@
              <input type="submit" value="enviar"/>
         </div>
      </form>
+
+  <a href="processa.php?id=001&valor=10.00&produto=coca-cola">
+   comprar 
+ </a>     
+
+
 </body>
 </html>
