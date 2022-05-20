@@ -10,7 +10,9 @@
 
      //var,let, const 
      const nome = document.getElementById("nome");
-     let bt =  document.getElementById("bt_")
+     let bt =  document.getElementById("bt_");
+     let email = document.getElementById("email");
+     let frm = document.getElementsByTagName("form")[0]
 
      bt.onclick=()=>{
     
@@ -18,8 +20,17 @@
             alert("campo nome obrigatorio");
             nome.focus();
          } 
-        
+
+         if(email.value.length <= 10 ){
+
+            email.style.borderColor = "red";
+            email.focus();
+         }
+
+         frm.submit();
+           
        }
+
      }
 
    </script>
