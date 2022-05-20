@@ -5,6 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <script type="text/javascript">
+     window.onload=()=>{
+
+     //var,let, const 
+     const nome = document.getElementById("nome");
+     let bt =  document.getElementById("bt_")
+
+     bt.onclick=()=>{
+    
+         if(nome.value.length <= 5 ){
+            alert("campo nome obrigatorio");
+            nome.focus();
+         } 
+        
+       }
+     }
+
+   </script>
+
+
 </head>
 <body>
     <!-- POST - 
@@ -14,19 +34,28 @@
         <div>
          <label> nome: </label>
          <input type="text" name="nome" id="nome">
-         <?php  if( isset($_REQUEST["erro"])){
+         <?php  if( isset($_REQUEST["erro"]) &&   $_REQUEST["erro"] == "nome"){
 
-               echo "*";
+               echo "<span style='color:red'>*</span>";
          } ?>
         </div> 
         <div>
         <div>
          <label> e-mail: </label>
-         <input type="email" name="email" id="email">
+         <input type="email" name="email" id="email" 
+          value=""        >
+         
+         
+         <?php  if( isset( $_REQUEST["erro"])  &&  $_REQUEST["erro"] == "email"){
+
+             echo "<span style='color:red'>*</span>";
+     } ?>
+
+
         </div> 
         <div>
          <label> sexo: </label>
-         <input type="radio" name="sexo" id="sexo" value="M"> Masculino
+         <input type="radio" name="sexo" id="sexo" value="M" checked> Masculino
          <input type="radio" name="sexo" id="sexo" value="F"> Feminino
         </div> 
          
@@ -35,7 +64,7 @@
 
         <div>
 
-             <input type="submit" value="enviar"/>
+             <input type="button" id="bt_"  value="enviar" />
         </div>
      </form>
 
