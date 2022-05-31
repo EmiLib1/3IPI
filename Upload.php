@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action method="" enctype="">
+    <form action="procUpload.php" method="post" enctype="multipart/form-data">
       <div>
         <label>Imagem</label>
          <input type="file" name="arq" id=""/>
