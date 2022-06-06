@@ -25,7 +25,7 @@
      // arquivo temporario diretorio
      $tmp = $_FILES["arq"]["tmp_name"] ;
      // destino do arquivo no site a ser definitivo
-     $arq =  "./".$_FILES["arq"]["name"] ;
+     $arq =  "Imagem/".$_FILES["arq"]["name"] ;
 
      if( move_uploaded_file( $tmp, $arq )){
          echo "arquivo enviado com sucesso para o servidor!!";
